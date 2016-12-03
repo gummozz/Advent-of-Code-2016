@@ -5,13 +5,7 @@ $i = 0
 [array]$cleanRowTwo =   $null
 [array]$cleanRowThree = $null
 
-$instructions = "    4   21  894
-  419  794  987
-  424  797  125
-  651  305  558
-  655  631  963
-    2  628  436
-"
+$instructions = "..."
 $instructionsArray = [string]$instructions -split '[\n]'
 
 foreach ($instruction in $instructionsArray) {
