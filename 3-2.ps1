@@ -5,13 +5,18 @@ $i = 0
 [array]$cleanRowTwo =   $null
 [array]$cleanRowThree = $null
 
-$instructions = "..."
+$instructions = "    4   21  894
+  419  794  987
+  424  797  125
+  651  305  558
+  655  631  963
+    2  628  436
+"
 $instructionsArray = [string]$instructions -split '[\n]'
 
 foreach ($instruction in $instructionsArray) {
     $instruction = $instruction -split '\s+'
     if ($i -eq 3) {
-
         if (
 
             (([int]$cleanRowOne[0] + [int]$cleanRowOne[1]) -gt [int]$cleanRowOne[2]) -and
@@ -41,9 +46,9 @@ foreach ($instruction in $instructionsArray) {
 
     
 
-        [array]$cleanRowOne =   $null
-        [array]$cleanRowTwo =   $null
-        [array]$cleanRowThree = $null
+        [array]$cleanRowOne =   $instruction[1]
+        [array]$cleanRowTwo =   $instruction[2]
+        [array]$cleanRowThree = $instruction[3]
         $i = 0
 
     }
@@ -52,11 +57,11 @@ foreach ($instruction in $instructionsArray) {
         [array]$cleanRowOne +=   $instruction[1]
         [array]$cleanRowTwo +=   $instruction[2]
         [array]$cleanRowThree += $instruction[3]
-        $i++
+        
     
     }
 
-
+    $i++
 
 }
 
