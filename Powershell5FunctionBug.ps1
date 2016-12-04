@@ -8,20 +8,7 @@ totally-real-room-200[decoy]
 $checkSum = $null
 $answer = 0
 
-
-foreach ($instruction in $instructions) {
-
-
-    if ($instruction -match '\[(.+?)\]') {
-
-    [string]$checkSum = ($Matches[0]).replace('[','').replace(']','')
-
-    }
-    else {continue}
-
-    $splittedInstruction = ($instruction -split '[\[]')[0]
-
-    function validate {
+function validate {
         param([int]$a)
         $lastOne = 0
         [string]$checkSumCheck = $null
@@ -61,6 +48,20 @@ foreach ($instruction in $instructions) {
 
 
     }
+
+foreach ($instruction in $instructions) {
+
+
+    if ($instruction -match '\[(.+?)\]') {
+
+    [string]$checkSum = ($Matches[0]).replace('[','').replace(']','')
+
+    }
+    else {continue}
+
+    $splittedInstruction = ($instruction -split '[\[]')[0]
+
+    
 
     for ($i=0;$i -lt 5; $i++){
         if(validate $i) {
