@@ -4,7 +4,7 @@
 $someString = "reyedfim"
 $md5 = new-object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
 $utf8 = new-object -TypeName System.Text.UTF8Encoding
-$i = 1617990
+$i = 0
 $position1 = $null
 $passwordCounter = 0
 [string]$output = $null
